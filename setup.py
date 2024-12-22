@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="invert_pdf_colors",
-    version="0.1",
+    version="THE_VERSION",
     description="A Python library to invert PDF text and background colors.",
     author="Your Name",
     author_email="your.email@example.com",
