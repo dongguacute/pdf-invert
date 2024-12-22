@@ -15,7 +15,7 @@ def invert_pdf_colors(input_pdf, output_pdf):
                     for span in line["spans"]:
                         span["color"] = 0xFFFFFF if span["color"] == 0x000000 else 0x000000
 
-        pix = page.get_pixmap(matrix=fitz.Matrix(2, 2))
+        pix = page.get_pixmap(matrix=fitz.Matrix(4, 4))  # 进一步提升分辨率
 
         img = fitz.Pixmap(fitz.csRGB, pix)
         img.invert_irect(img.irect)
