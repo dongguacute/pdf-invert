@@ -3,7 +3,7 @@ name: Python Package Publish
 on:
   push:
     branches:
-      - main  # 可以根据需要修改为你的主要分支名
+      - main  # 根据需要修改为你的主要分支名
     tags:
       - 'v*'  # 只有当有以 v 开头的标签被推送时才会触发发布
 
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: [3.8, 3.9, 3.10]  # 测试多个 Python 版本
+        python-version: [3.8, 3.9, 3.10]  # 删除 3.1 版本
 
     steps:
     - name: Checkout code
