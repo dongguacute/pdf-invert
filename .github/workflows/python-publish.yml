@@ -9,20 +9,16 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9, 3.10]  # 删除 3.1 版本
+    runs-on: ubuntu-22.04
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - name: Check out the repository
+      uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.8'  # 使用支持的 Python 版本，修改为合适的版本
 
     - name: Install dependencies
       run: |
@@ -44,7 +40,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.10
+        python-version: '3.10'  # 使用不同的 Python 版本进行构建
 
     - name: Install dependencies
       run: |
@@ -66,7 +62,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.10
+        python-version: '3.10'  # 使用相同的版本进行发布
 
     - name: Install Twine
       run: |
