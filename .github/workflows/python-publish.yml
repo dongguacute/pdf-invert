@@ -27,8 +27,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest
-
+          pytest -v  # Verbose output for better debugging
   build:
     runs-on: ubuntu-latest
     needs: test  # 仅在测试通过后执行
